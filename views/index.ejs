@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TWC</title>
+    <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="../bower_components/core-animated-pages/core-animated-pages.html">
+    <link rel="import" href="../bower_components/core-animated-pages/transitions/slide-from-bottom.html">
+    <link rel="import" href="../bower_components/paper-button/paper-button.html">
+    <link rel="import" href="../bower_components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="../bower_components/basic-slideshow/basic-slideshow.html">
+    <link rel="import" href="../bower_components/basic-framed-content/basic-framed-content.html">
+    <link rel="import" href="../elements/search-sm.html">
+    <link rel="import" href="../elements/toolbar-sm.html">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Kreon:light' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <style>
+      core-animated-pages {
+        position: absolute;
+        top: 130px;
+        right: 0;
+        bottom: 0px;
+        left: 0;
+        overflow: hidden;
+      }
+      section > div {
+        height: 100%;
+        color: white;
+      }
+      basic-slideshow {
+        width: 100%;
+        height: 100%;
+      }
+      #texto {
+        position: absolute;
+        z-index: 10;
+        background: rgb(130, 130, 130);
+        background: rgba(130, 130, 130, 0.8);
+        width: 100%;
+        height: 100%;
+      }
+      #seg {
+        background-image: url(/images/774.jpg);
+        background-repeat: no-repeat;
+      }
+      #segint {
+        background: rgb(255, 255, 255);
+        background: rgba(255, 255, 255, 0.6);
+        width: 100%;
+        height: 100%;
+      }
+      #cajas {
+        height: 350px;
+        width: 600px;
+        margin: 0 auto;
+      }
+      #v {
+        height: 125px;
+        width: 100%;
+        background-color: #800000;
+      }
+      #expl {
+        font-family: "Kreon";
+        font-weight: light;
+        width: 55%;
+        height: 40%;
+        margin-left: 40%;
+        margin-right: 50px;
+        float: left;
+        margin-top: -100px;
+      }
+      #ir, #volver {
+        margin-left: 70px;
+        font-size: 300%;
+        font-family: "Josefin Sans";
+      }
+      #volver {
+        float:left;
+        position:relative;
+        left:50%;
+        margin-left: -91px;
+        margin-top: 40px;
+      }
+    </style>
+    <toolbar-sm>
+      <core-icon-button icon="home" onclick="cambia(1)"></core-icon-button>
+    </toolbar-sm>
+    <core-animated-pages transitions="slide-from-bottom">
+      <section>
+        <div id="prim" slide-from-bottom>
+          <div id=tit>
+            <div id="texto">
+              <p id="what" style="font-family: Josefin Sans; text-shadow: 4px 4px 4px #151515;"><strong>Seek new realities with eXplore</strong></p>
+              <core-icon-button id="ir" icon="expand-less" onclick="cambia(2)"><span>Start now!</span></core-icon-button>
+              <div id="expl">
+                <p style="font-size: 200%;"><strong>eXplore</strong> is one of the most effective search engines today. It makes 
+                  easier for you to find all your favourite shows and movies and provides you with relevant information about them.  
+                </p>
+                <p style="font-size: 300%;"><em><strong>So, what are you watching TONIGHT?</strong></em></p>
+              </div>
+            </div>
+            <basic-framed-content>
+              <basic-slideshow>
+                <img src="/images/got.jpg">
+                <img src="/images/div.jpg">
+                <img src="/images/dex.jpg">
+                <img src="/images/hun.jpg">
+              </basic-slideshow>
+            </basic-framed-content>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div id="seg" slide-from-bottom>
+          <div id="v">
+            <core-icon-button id="volver" icon="expand-more" onclick="cambia(2)"><span>Go back</span></core-icon-button>
+          </div>
+          <div id="segint">
+            <div id="cajas"><br>
+              <search-sm del="SHOW" rut="/shows">Find your show</search-sm>
+              <search-sm del="MOVIE" rut="/movies">Find your movie</search-sm>
+            </div>
+          </div>
+        </div>
+      </section>
+    </core-animated-pages>
+    <script>
+      function cambia(t) {
+        var p = document.querySelector('core-animated-pages');
+        if (p.selected === 0 && t === 2) {
+          p.selected = 1;
+        } else if (p.selected === 1){
+          p.selected = 0;
+        }
+      }
+    </script>
+  </body>
+</html>

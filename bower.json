@@ -1,0 +1,34 @@
+{
+  "name": "bower.json",
+  "version": "0.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "~0.7.5",
+    "polymer": "Polymer/polymer#^0.5",
+    "flip-card": "~0.0.2",
+    "paper-button": "Polymer/paper-button#~0.5.6",
+    "core-overlay": "Polymer/core-overlay#^0.5",
+    "paper-dialog": "Polymer/paper-dialog#^0.5",
+    "core-collapse": "Polymer/core-collapse#^0.5",
+    "core-animated-pages": "Polymer/core-animated-pages#^0.5",
+    "core-icon-button": "Polymer/core-icon-button#^0.5",
+    "core-toolbar": "Polymer/core-toolbar#^0.5",
+    "basic-salideshow": "basic-web-components/basic-slideshow#master",
+    "basic-framed-content": "basic-web-components/basic-framed-content#master",
+    "basic-slideshow": "basic-web-components/basic-slideshow#master",
+    "basic-carousel": "basic-web-components/basic-carousel#master",
+    "basic-carousel-fit": "basic-web-components/basic-carousel-fit#master"
+  },
+  "resolutions": {
+    "webcomponentsjs": "~0.7.5",
+    "polymer": "^0.5",
+    "core-component-page": "^0.5"
+  }
+}

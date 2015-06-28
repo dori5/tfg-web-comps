@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TWC</title>
+    <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="../bower_components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="../elements/detail-m.html">
+    <link rel="import" href="../elements/toolbar-sm.html">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <style>
+      #titulo {
+        margin-left: 100px;
+        margin-right: 50px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 250%;
+        margin-top: 40px;
+        border-bottom: grey 1px solid;
+        font-family: "Josefin Sans";
+        text-shadow: 1px 1px 1px #424242;
+        color: black;
+      }
+      #dura, #genero, #anio {
+        clear: left;
+        clear: left;
+        margin-left: 150px;
+        font-size: 150%;
+        margin-right: 50px;
+        font-family: "Josefin Sans";
+      }
+      #genero {
+        padding-bottom: 30px;
+      }
+      detail-m {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        bottom: 20%;
+      }
+      #fondo {
+        position: absolute;
+        top: 130px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url(/images/pat2.png);
+      }
+      detail-m::shadow core-icon-button {
+        font-family: "Josefin Sans";
+        font-size: 150%;
+      }
+    </style>
+    <toolbar-sm>
+      <span flex style="margin-top: 120px; font-size: 220%; font-family: Josefin Sans"><strong>Movies matching your search</strong></span>
+      <core-icon-button icon="arrow-back" onclick="history.back()"></core-icon-button>
+      <core-icon-button icon="home" onclick="redir()"></core-icon-button>
+    </toolbar-sm>
+    <div id="fondo">
+      <detail-m pos="<%=datos.Poster%>">
+        <div id="frente">
+          <h1 id="titulo"><%=datos.Title%> --- Rating: <%=datos.imdbRating%></h1>
+          <p id="anio">Year: <%=datos.Year%></p>
+          <p id="dura">Runtime: <%=datos.Runtime%></p>
+          <p id="genero">Genre: <%=datos.Genre%></p>
+        </div>
+        <div id="detalles">
+          <h1 style="border-bottom: grey 1px solid;"><em><%=datos.Title%></em></h1>
+          <div style="margin-left: 20px; margin-right: 20px;">
+            <p style="float: left; width: 250px;"><em><strong>Released:</strong> <%=datos.Released%></em></p>
+            <p style="float: left; width: 250px;"><em><strong>Languages:</strong> <%=datos.Language%></em></p>
+            <p style="float: left; width: 250px;"><em><strong>Director:</strong> <%=datos.Director%></em></p>
+            <p style="float: left; width: 250px;"><em><strong>Country:</strong> <%=datos.Country%></em></p>
+            <p style="clear: left;"><em><strong>Writer:</strong> <%=datos.Writer%></em></p>
+            <p><em><strong>Cast:</strong> <%=datos.Actors%></em></p><br>
+          </div>
+          <div style="margin-left: 20px; margin-right: 20px; border-bottom: grey 1px solid; border-right: grey 1px solid;">
+            <p><em><strong>PLOT:</strong></em></p>
+            <p style="margin-right: 10px;"><em><%=datos.Plot%></em></p>
+          </div>
+        </div>
+      </detail-m>
+    </div>
+    <script>
+      function redir() {
+        location.href="/";
+      } 
+    </script>
+  </body>
+</html>

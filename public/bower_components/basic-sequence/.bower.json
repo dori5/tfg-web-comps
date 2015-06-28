@@ -1,0 +1,30 @@
+{
+  "name": "basic-sequence",
+  "description": "A modal sequence of child elements with previous/next semantics",
+  "version": "0.5.0",
+  "license": "MIT",
+  "main": "basic-sequence.html",
+  "dependencies": {
+    "basic-modes": "basic-web-components/basic-modes#^0.5.0"
+  },
+  "devDependencies": {
+    "basic-framed-content": "basic-web-components/basic-framed-content#^0.5.0"
+  },
+  "keywords": [
+    "basic-web-components",
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "homepage": "https://github.com/basic-web-components/basic-sequence",
+  "_release": "0.5.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.5.0",
+    "commit": "81f3282cc0d7c791f7dfad43a321b93b0279223d"
+  },
+  "_source": "git://github.com/basic-web-components/basic-sequence.git",
+  "_target": "^0.5.0",
+  "_originalSource": "basic-web-components/basic-sequence"
+}

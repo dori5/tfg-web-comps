@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TWC</title>
+    <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="../bower_components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="../bower_components/core-collapse/core-collapse.html">
+    <link rel="import" href="elements/toolbar-sm.html">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <style>
+      .heading {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 20px;
+        border: 1px solid #D3B077;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        cursor: pointer;
+        background-image: url(/images/pat1.jpg);
+      }
+      .content {
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid #A0A0A0;
+        border-top: none;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: rgba(192, 192, 192, 0.5);
+      }
+      #list {
+        position: absolute;
+        overflow: scroll;
+        top: 130px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url(/images/pat2.png);
+      }
+      h1 {
+        font-size: 250%;
+        padding-left: 100px;
+        font-family: "Josefin Sans";
+        text-shadow: 1px 1px 1px #424242;
+      }
+    </style>
+    <toolbar-sm>
+      <span flex style="margin-top: 120px; font-size: 220%; font-family: Josefin Sans"><strong>Shows matching your search</strong></span>
+      <core-icon-button icon="arrow-back" onclick="history.back()"></core-icon-button>
+      <core-icon-button icon="home" onclick="redir()"></core-icon-button>
+    </toolbar-sm>
+    <div id="list">
+      <% for (var i in datos) { %>
+        <div class="heading" onclick="document.querySelector('#collapse<%=i%>').toggle();">
+          <h1><%=datos[i].show.name%></h1>
+        </div>
+        <core-collapse id="collapse<%=i%>">
+          <div class="content">
+            <img style="float: left; margin-top: 30px; margin-left: 50px; margin-bottom: 30px;" src="<%= datos[i].show.image.medium %>">
+            <% if (datos[i].show.summary != null) {
+                 var resumenA = datos[i].show.summary;
+                 var resumenB = resumenA.replace(/\<\/p\>/g, "").replace(/\<p\>/g, "");
+                 var resumenC = resumenB.replace(/\<span\>/g, "").replace(/\<\/span\>/g, "");
+                 var resumenD = resumenC.replace(/\<strong\>/g, "").replace(/\<\/strong\>/g, "");
+                 var resumen = resumenD.replace(/\<br \/\>/g, "");
+               }
+               var canal = "N/A";
+               var pais = "N/A";
+               var nota = "N/A";
+               if (datos[i].show.rating.average != null) {
+                 nota = datos[i].show.rating.average;
+               }
+               if (datos[i].show.network != null) { 
+                 canal = datos[i].show.network.name;
+                 pais = datos[i].show.network.country.name;
+               } else 
+               var genero = "N/A";
+               for (var j in datos[i].show.genres) {
+                 if (datos[i].show.genres.length == 0) {
+                 } else if (j == 0) {
+                   genero = datos[i].show.genres[0];
+                 } else {
+                   genero = genero + ", " + datos[i].show.genres[j];
+                 }
+               } %>
+            <div style="float: left; margin-top: 30px; max-width: 75%;">
+              <div style="margin-left: 50px; margin-right: 50px; ">
+                <p style="float: left; width: 250px;"><em><strong>Rating:</strong> <%=nota%></em></p>
+                <p style="float: left; width: 250px;"><em><strong>TV Channel:</strong> <%=canal%></em></p>
+                <p style="float: left; width: 250px;"><em><strong>Premiered:</strong> <%=datos[i].show.premiered%></em></p><br>
+                <p style="float: left; width: 250px;"><em><strong>Country:</strong> <%=pais%></em></p>
+                <p style="float: left; width: 250px;"><em><strong>Genres:</strong> <%= genero %></em></p>
+                <p style="float: left; width: 250px;"><em><strong>Status:</strong> <%=datos[i].show.status%></em></p><br>
+                <p style="float: left; width: 250px;"><em><strong>Runtime:</strong> <%=datos[i].show.runtime%> min</em></p>
+              </div>
+              <div style="clear:left; margin-left: 50px; margin-right: 20px;"><br>
+                <p><em><strong>SUMMARY:</strong></em></p>
+                <p style="margin-right: 50px; margin-left: 50px;"><em><%=resumen%></em></p>
+              </div>  
+            </div>
+            <p style="clear: left;"></p>
+          </div>
+        </core-collapse>
+      <%  }; %>
+      <div style="height: 70px;"></div>
+    </div>
+    <script>
+      function redir() {
+          location.href="/";  
+      } 
+    </script>
+  </body>
+</html>

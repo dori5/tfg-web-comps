@@ -1,0 +1,31 @@
+{
+  "name": "basic-framed-content",
+  "description": "Communicates across a frame boundary to an outer element",
+  "license": "MIT",
+  "main": "basic-framed-content.html",
+  "dependencies": {
+    "basic-shared": "basic-web-components/basic-shared#master",
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "*"
+  },
+  "keywords": [
+    "basic-web-components",
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*",
+    "/test/"
+  ],
+  "homepage": "https://github.com/basic-web-components/basic-framed-content",
+  "_release": "309c9d0ee4",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "309c9d0ee441f3ff20cb548a5c19c1546dd2e7c1"
+  },
+  "_source": "git://github.com/basic-web-components/basic-framed-content.git",
+  "_target": "master",
+  "_originalSource": "basic-web-components/basic-framed-content"
+}

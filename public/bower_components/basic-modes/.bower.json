@@ -1,0 +1,30 @@
+{
+  "name": "basic-modes",
+  "description": "Shows a single child element at a time",
+  "version": "0.5.0",
+  "license": "MIT",
+  "main": "basic-modes.html",
+  "dependencies": {
+    "basic-selector": "basic-web-components/basic-selector#^0.5.0"
+  },
+  "devDependencies": {
+    "basic-framed-content": "basic-web-components/basic-framed-content#^0.5.0"
+  },
+  "keywords": [
+    "basic-web-components",
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "homepage": "https://github.com/basic-web-components/basic-modes",
+  "_release": "0.5.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.5.0",
+    "commit": "c9d826e4b99ba12e0d6f4c19a8c1971d43d42d4f"
+  },
+  "_source": "git://github.com/basic-web-components/basic-modes.git",
+  "_target": "^0.5.0",
+  "_originalSource": "basic-web-components/basic-modes"
+}

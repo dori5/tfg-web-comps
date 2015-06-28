@@ -1,0 +1,48 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-icon-button/core-icon-button.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-action-dialog.html">
+
+<polymer-element name="detail-m" attributes="pos">
+  <template>
+    <style>
+      #contain {
+        background-image: url(/images/pat1.jpg);
+      }
+      #den {
+        height: 300px; 
+        width: 300px;
+      }
+      core-icon-button {
+        float: right;
+        margin-right: 100px;
+      }
+    </style>
+    <div id="contain">
+      <div id="fren">
+        <content select="#frente"></content>
+      </div>
+      <core-icon-button icon="chevron-right" on-click="{{toggleDialog}}"><span><strong>Details</strong></span></core-icon-button>
+      <core-icon-button icon="class" on-click="{{redir}}"><span><strong>POSTER</strong></span></core-icon-button>
+      <paper-action-dialog id="dialog" backdrop style="width: 70%; height: 70%; max-width: 625px;" on-core-overlay-open-completed="{{ positionCenter }}">
+        <div id="den">
+          <content select="#detalles"></content>
+        </div>
+      </paper-action-dialog>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      pos: "http://principiosdelcoaching.com/wp-content/uploads/2013/09/preguntas.jpg",
+      toggleDialog: function() {
+        this.$.dialog.toggle();
+      },
+      positionCenter: function(event) {
+        event.target.resizeHandler();
+        event.target.sizingTarget.style['max-width'] = '100%';
+      },
+      redir: function() {
+        location.href=this.pos;
+      }
+    });
+  </script>
+</polymer-element>

@@ -1,0 +1,32 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-toolbar/core-toolbar.html">
+
+<polymer-element name="toolbar-sm" noscript>
+  <template>
+    <style>
+      #arr {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        background-image: url(/images/pat4.png);
+        color: white;
+      }
+      #fin {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        z-index: 11;
+        background-image: url(/images/pat4.png);
+      } 
+    </style>
+    <core-toolbar class="medium-tall" id="arr">
+      <span flex style="margin-top: 70px; margin-left: 50px; font-size: 200%;"> E<strong style="font-size:300%;">X</strong>PLORE </span>
+      <content></content>
+    </core-toolbar>
+    <div id="fin"></div>
+  </template>
+</polymer-element>

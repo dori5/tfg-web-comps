@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TWC</title>
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="../bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="../bower_components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="elements/content-sm.html">
+    <link rel="import" href="elements/toolbar-sm.html">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <style>
+      #peliculas {
+        position: absolute;
+        overflow: scroll;
+        top: 130px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url(/images/pat2.png);
+      }
+      #esp {
+        height: 70px;
+      }
+    </style>
+    <toolbar-sm>
+      <span flex style="margin-top: 120px; font-size: 220%; font-family: Josefin Sans"><strong>Movies matching your search</strong></span>
+      <core-icon-button icon="arrow-back" onclick="history.back()"></core-icon-button>
+      <core-icon-button icon="home" onclick="redir()"></core-icon-button>
+    </toolbar-sm>
+    <div id="peliculas">
+      <% for (var i in datos.Search) { %>
+        <content-sm rut="/movies/<%= datos.Search[i].imdbID %>" anio="<%= datos.Search[i].Year %>">
+          <%= datos.Search[i].Title %>
+        </content-sm><br>
+      <%  }; %>
+      <div id="esp"></div>
+    </div>
+    <script>
+      function redir() {
+        location.href="/";
+      } 
+    </script>
+  </body>
+</html>

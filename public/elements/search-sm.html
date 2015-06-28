@@ -1,0 +1,39 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/flip-card/flip-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+<polymer-element name="search-sm" attributes="del rut">
+  <template>
+    <style>
+      div {
+        width: 300px;
+        height: 350px;
+        float: left;
+      }
+      flip-card {
+        margin: 0 auto;
+      }
+    </style>
+    <div>
+      <flip-card axis="y" style="height: 350px; width: 275px">
+        <front style="border: 1px solid white; background-color: black; font-family: Josefin Sans;">
+          <br>{{del}}
+        </front>
+        <back style="background-color: #F5D6C6; color: black; font-family: Josefin Sans; font-size: 350%;">
+          <form method="get" action="{{rut}}">
+            <span><content></content></span>
+            <input type="text" name="q" value=""/>
+            <br>
+            <input type="submit" style="font-family: Josefin Sans; font-size: 100%; margin-top: 30px;" value="GO!">
+          </form>
+        </back>
+      </flip-card>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      del: "Delante",
+      rut: "/"
+    });
+  </script>
+</polymer-element>

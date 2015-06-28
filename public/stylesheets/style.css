@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "SpiderFont";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/fonts/spider-font.ttf") format("truetype");
+}
+
+#tit {
+  margin: 0 auto;
+}
+
+#cont {
+  position: absolute;
+  left: 50%; 
+  width: 90%; 
+  margin-left: -45%; 
+  border-radius:30px;
+  -moz-border-radius:15px 15px 15px 15px; 
+  -webkit-border-radius:15px 15px 15px 15px; 
+  border:1px solid #707070;
+  /*background-color: black;*/
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#what {
+  font-size: 600%;
+  width: 100%;
+  text-align: center;
+  color: #800000;
+}
+
+body {
+  background-color: #800000;
+  padding: 20px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}

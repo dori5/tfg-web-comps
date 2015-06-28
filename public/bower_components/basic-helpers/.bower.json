@@ -1,0 +1,28 @@
+{
+  "name": "basic-helpers",
+  "description": "Web component helpers",
+  "version": "0.5.0",
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.5"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.2.4"
+  },
+  "keywords": [
+    "basic-web-components"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "homepage": "https://github.com/basic-web-components/basic-helpers",
+  "_release": "0.5.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.5.0",
+    "commit": "d36f48681194cfe09f1dfb92bbdc30033cc69ed9"
+  },
+  "_source": "git://github.com/basic-web-components/basic-helpers.git",
+  "_target": "^0.5.0",
+  "_originalSource": "basic-web-components/basic-helpers"
+}

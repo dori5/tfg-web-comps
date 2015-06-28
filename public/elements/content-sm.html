@@ -1,0 +1,45 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-icon-button/core-icon-button.html">
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+<polymer-element name="content-sm" attributes="rut anio">
+  <template>
+    <style>
+      #cont { 
+        width: 100%;
+        background-image: url(/images/pat1.jpg);
+      }
+      h1 {
+        font-family: "Josefin Sans";
+        font-size: 250%;
+        margin-left: 100px;
+        padding-top: 20px;
+        text-shadow: 1px 1px 1px #424242;
+      }
+      span {
+        font-family: "Josefin Sans";
+        font-size: 150%;
+        margin-left: 150px;
+      }
+      core-icon-button {
+        float: right;
+        margin-right: 100px;
+      }
+    </style>
+    <div id="cont">
+      <h1><content></content></h1>
+      <span>Year of release: {{anio}}</span>
+      <core-icon-button icon="chevron-right" on-click="{{redir}}"><span><strong>More info</strong></span></core-icon-button>
+      <br><br><br>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      anio: "0000",
+      rut: "/",
+      redir: function() {
+        location.href = this.rut;
+      }
+    });
+  </script>
+</polymer-element>
